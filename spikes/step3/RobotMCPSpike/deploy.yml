@@ -1,0 +1,16 @@
+policy_name: RobotMCPSpike
+protocol: ws
+host: localhost
+port: null
+bench_name: null
+task_name: null
+ckpt_name: null
+env_cfg_type: null
+seed: null
+action_type: null
+gpu_id: null
+eval_batch: false
+# spike: mỗi lần poll chờ tối đa wait_s; "agent" giả gửi lệnh sau hold_s; long_s cho 1 call dài.
+wait_s: 10
+hold_s: 150
+long_s: 130

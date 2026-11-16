@@ -1,0 +1,23 @@
+policy_name: RobotMCP
+protocol: ws
+host: localhost
+port: null
+bench_name: null
+task_name: null
+ckpt_name: null
+env_cfg_type: null
+seed: null
+action_type: joint
+gpu_id: null
+eval_batch: false
+# --- gateway (phía server, robot_mcp/gateway.py) ---
+mcp_host: 127.0.0.1
+mcp_port: 8765
+max_moves: 100          # số lần gọi move tối đa mỗi episode (bằng mặc định của Direct-EEF)
+poll_wait_s: 10         # mỗi lần poll giữ tối đa bấy nhiêu giây (phải < 120)
+move_timeout_s: 600     # tool move chờ sim trả kết quả tối đa bấy nhiêu giây
+idle_timeout_s: 1800    # agent không gọi tool nào trong bấy nhiêu giây thì kết thúc episode
+tasks_dir: /opt/robot_mcp/tasks
+out_dir: /out
+agent_obs_root: /work/obs
+move_returns_images: true

@@ -1,0 +1,258 @@
+{
+  "source": "https://robodojo-benchmark.com/leaderboard/detail-description",
+  "chunk": "index-DAN7VWCj.js",
+  "tasks": [
+    {
+      "task": "arrange_largest_number",
+      "category": "Generalization",
+      "has_scoring": true,
+      "sha256": "1427c7efd9f1fb1173798539c900718f5a8138362d850afb9c9663d49377ceed"
+    },
+    {
+      "task": "fold_clothes",
+      "category": "Generalization",
+      "has_scoring": true,
+      "sha256": "d78395ef508948decfb6d4d1b45e447e43a2e4ffc289a32c32ac0ee7472a35ec"
+    },
+    {
+      "task": "hang_mugs",
+      "category": "Generalization",
+      "has_scoring": true,
+      "sha256": "0b41d19c0af79e0c987670a1dfcdad7b52e2bba1daa502e59f1cd4505bd9fe10"
+    },
+    {
+      "task": "make_toast",
+      "category": "Generalization",
+      "has_scoring": true,
+      "sha256": "e0dffa58f3d06f0ac5fa16428937e40cdbd3a4913f09c52690e7be35010f0e05"
+    },
+    {
+      "task": "pack_objects_into_box",
+      "category": "Generalization",
+      "has_scoring": true,
+      "sha256": "5881a53109305d176a2680028c1aac6e0ee3feb147b1e92329d240018fcb5fdf"
+    },
+    {
+      "task": "pour_liquid_into_cup",
+      "category": "Generalization",
+      "has_scoring": true,
+      "sha256": "3e999adfc04a15a035fc6ab1f4a6b60ef65853a894b4ea46a6f45c1e547353ad"
+    },
+    {
+      "task": "push_T",
+      "category": "Generalization",
+      "has_scoring": true,
+      "sha256": "ac7209deab4def9bbfce9522a99d78821a091314ed1808a73d1760334e00377d"
+    },
+    {
+      "task": "sort_nesting_dolls_by_size",
+      "category": "Generalization",
+      "has_scoring": true,
+      "sha256": "1a09682b034cbc205b97ff19bd2b17719a24ee89f3204dfba2666116b52ce160"
+    },
+    {
+      "task": "stack_blocks",
+      "category": "Generalization",
+      "has_scoring": true,
+      "sha256": "95784c52183ccc67705d096ad8f337e3da4481af5c147455fc366ca310a3cd10"
+    },
+    {
+      "task": "stack_bowls",
+      "category": "Generalization",
+      "has_scoring": true,
+      "sha256": "e81fe9bfaefe9677fb661d886f451377133a583620dbf1119989153b2d670b92"
+    },
+    {
+      "task": "store_laptop_and_headphones",
+      "category": "Generalization",
+      "has_scoring": true,
+      "sha256": "5bd2f653be2a811e6193e20f05a189e74c3ea136b7e6c08d899eb078f717e9ec"
+    },
+    {
+      "task": "sweep_blocks",
+      "category": "Generalization",
+      "has_scoring": false,
+      "sha256": "81fbc0513e57f9bf5593b396d3285aaba85ad0d0c2a46922a47f027364fee057"
+    },
+    {
+      "task": "build_tower",
+      "category": "Precision",
+      "has_scoring": true,
+      "sha256": "288afba42351f4a1ab94ea73607763b7820b04de1ed4df6641a09c41edfd9c18"
+    },
+    {
+      "task": "deposit_coin",
+      "category": "Precision",
+      "has_scoring": true,
+      "sha256": "cd638eb80f17a36e5f6fe165e4f9f27bf6e04f7a5b447904c5bb9dfb6f0d19df"
+    },
+    {
+      "task": "fasten_screws",
+      "category": "Precision",
+      "has_scoring": true,
+      "sha256": "d415f1b8edf674e876e0a5c53e2d57a5a8309ea68dfb269e8a2e968d6d4879dd"
+    },
+    {
+      "task": "insert_key",
+      "category": "Precision",
+      "has_scoring": true,
+      "sha256": "cf71a4133cffbeb97e1865248d6e51e619a2b12d7940c3b46c8faa914a9fa6cf"
+    },
+    {
+      "task": "insert_tubes",
+      "category": "Precision",
+      "has_scoring": true,
+      "sha256": "26763a5b0bbfd16c4ad73e81c9870f2f3fe9f8c961dd5483ed550c98de1bfec2"
+    },
+    {
+      "task": "play_Xylophone",
+      "category": "Precision",
+      "has_scoring": true,
+      "sha256": "7a5faaf90f19d6685d34058d58283ecde2af6d38ee3752c98096e7b9432c32ed"
+    },
+    {
+      "task": "plug_in_charger",
+      "category": "Precision",
+      "has_scoring": true,
+      "sha256": "068a16cfb064dc7b0db034c3090574ecf188d75c53ecf841095bba00a8ace669"
+    },
+    {
+      "task": "pour_balls_into_vase",
+      "category": "Precision",
+      "has_scoring": false,
+      "sha256": "abeee43559ed046f0252d9968c027c94f92aab02239e33eccd76c19d5cc5eaa1"
+    },
+    {
+      "task": "classify_objects",
+      "category": "Long-Horizon",
+      "has_scoring": true,
+      "sha256": "abae1d54a1e33e0ef7eaf74a32750c928197b6e8f92f58447c96fba87d1c27cd"
+    },
+    {
+      "task": "fill_egg_holder",
+      "category": "Long-Horizon",
+      "has_scoring": true,
+      "sha256": "ff9cea1ce97d7b5672fc5c3d493a64f12529d5c4345c1076202f1af314c2b2b1"
+    },
+    {
+      "task": "fill_pen_holder",
+      "category": "Long-Horizon",
+      "has_scoring": true,
+      "sha256": "767da40dd87905f0b68bfcb32cdb3e233615133aa8475d161c0aa182e945ca15"
+    },
+    {
+      "task": "make_kong",
+      "category": "Long-Horizon",
+      "has_scoring": true,
+      "sha256": "1c88f417720e4e96f4cfd9b8decec49da095b547e33541417848270b21dd1916"
+    },
+    {
+      "task": "organize_table",
+      "category": "Long-Horizon",
+      "has_scoring": true,
+      "sha256": "d694d21498aa07a8bb39c937b1b76306402f5bf029b81ea77b0dcb3ec6a82a1c"
+    },
+    {
+      "task": "play_stacking_toy",
+      "category": "Long-Horizon",
+      "has_scoring": true,
+      "sha256": "bebd5b7a31652111aa4c571d604e602cdd34215935c614c6d616a7ea32f7c965"
+    },
+    {
+      "task": "play_tic_tac_toe",
+      "category": "Long-Horizon",
+      "has_scoring": true,
+      "sha256": "928bef739f1fbf8683ee7542b87ae5d0bbc4a05602e70cadac5f5b051ed07771"
+    },
+    {
+      "task": "put_bottles_into_dustbin",
+      "category": "Long-Horizon",
+      "has_scoring": false,
+      "sha256": "e2c5cbb677a1e64a92d8c577b0c344571f60f975368fe55a694cb9febb65f224"
+    },
+    {
+      "task": "cover_blocks",
+      "category": "Memory",
+      "has_scoring": true,
+      "sha256": "a6dd72e6e3b5372cf209834d59833965b189c0c4d0cb5f1844039dcc8fcbd2c9"
+    },
+    {
+      "task": "imitate_sorting_sequence",
+      "category": "Memory",
+      "has_scoring": true,
+      "sha256": "53f939b503299c53c7d4ad763be3ac7033630d80db9f5241535ad83b6fbc7e1d"
+    },
+    {
+      "task": "match_and_pick_from_conveyor",
+      "category": "Memory",
+      "has_scoring": true,
+      "sha256": "7419347b22b3f3efc7bf985324d72f6bed2f4d0b42e09fa31ff489662578baa3"
+    },
+    {
+      "task": "press_by_number",
+      "category": "Memory",
+      "has_scoring": true,
+      "sha256": "3b4b130e2b7efa8c8db29cf369d9f25fdef7fdfc693f3b1fdaa5da2bf7992752"
+    },
+    {
+      "task": "swap_T",
+      "category": "Memory",
+      "has_scoring": true,
+      "sha256": "37aae5c2fed84de2aad7004929bf3c72d4c0920f74253cf8fac733da0d2ca018"
+    },
+    {
+      "task": "swap_blocks",
+      "category": "Memory",
+      "has_scoring": false,
+      "sha256": "3b0a0f747c6579c10dbc68c19c097d5169da64ddc7aa4b08904c8f2a5b320b43"
+    },
+    {
+      "task": "align_blocks",
+      "category": "Open",
+      "has_scoring": true,
+      "sha256": "ded84f13645f9cd953a6d357d26cc764f96fa9c25029a9c257c01cd6f9964bee"
+    },
+    {
+      "task": "classify_objects_by_language",
+      "category": "Open",
+      "has_scoring": true,
+      "sha256": "0d7f0c5292febda1edf8bb4aca2a8c7ee4fc70b2c6084306d51f248b624f678c"
+    },
+    {
+      "task": "general_pickup",
+      "category": "Open",
+      "has_scoring": true,
+      "sha256": "921844c2ef91d7063bf81a4257216055713d547ad5eb4711c0930c35de2a469c"
+    },
+    {
+      "task": "pick_from_conveyor_by_image",
+      "category": "Open",
+      "has_scoring": true,
+      "sha256": "056e5bdeaed595d3438ce825c14984e9a6a323756e8a5ccbc22e1a5942a6d032"
+    },
+    {
+      "task": "pour_by_language",
+      "category": "Open",
+      "has_scoring": true,
+      "sha256": "d2ec7e75eb948363eaf14c9e6c627a8ec65cd8bdf24f96bd34d5967e8846042d"
+    },
+    {
+      "task": "solve_equation",
+      "category": "Open",
+      "has_scoring": true,
+      "sha256": "ad264faaa516ee432e7dac1fbcdd5f48d2e0cbeb86ec936a232b85cb724f0fc3"
+    },
+    {
+      "task": "stack_blocks_by_language",
+      "category": "Open",
+      "has_scoring": true,
+      "sha256": "29b1c8c75a50d9a09014d315d7dd4bd1f95151325ae8b7eca58df7dc88b470e7"
+    },
+    {
+      "task": "store_tools_in_toolbox",
+      "category": "Open",
+      "has_scoring": true,
+      "sha256": "e3e98333d473d0269ca2911d75b48af8f25236d112a1cb0b1e3beddf26c04b2b"
+    }
+  ]
+}

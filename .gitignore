@@ -1,0 +1,22 @@
+# Secrets
+.env
+*.key
+
+# Upstream checkouts (cloned by scripts, not tracked here)
+third_party/
+
+# Run outputs
+results/
+runs/
+eval_result/
+*.mp4
+*.log
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+.ipynb_checkpoints/
+
+# OS
+.DS_Store

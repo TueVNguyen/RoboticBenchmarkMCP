@@ -1,0 +1,3 @@
+## Description
+
+Use the empty mat as a temporary position: place one block on it, move the other block to the newly freed mat, then move the temporarily stored block to the remaining destination mat. For each of the three transfers, first lift the block by more than 3 cm above its current placement height. After each placement, fully press and release the confirmation button. Before confirming, check that the block is centered on the correct mat, and do not add extra confirmations. Finish with the blocks on each other's original mats, fully open both grippers and return both arms to their initial poses.
