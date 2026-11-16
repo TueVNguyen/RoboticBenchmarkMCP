@@ -4,7 +4,7 @@
 #   sim:     RoboDojo client với policy RobotMCP (deploy.py); ma trận camera bật bằng mount config
 #   agent:   robot_mcp.scripted_agent gọi observe / move / give_up qua MCP
 # Kết quả: results/scripted/<stamp>/ (gateway/, agent/, client.log, gateway.log, eval/, gpu.csv)
-# Biến: TASK (stack_bowls), SETTLE (số step giữ yên sau mỗi lần di chuyển, 0), PIXEL (188,215), ARM (left)
+# Biến: TASK (stack_bowls), SETTLE (số step giữ yên sau mỗi lần di chuyển, 5), PIXEL (188,215), ARM (left)
 set -uo pipefail
 
 ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
@@ -15,7 +15,7 @@ TASK="${TASK:-stack_bowls}"
 POLICY=RobotMCP
 PORT="${PORT:-6061}"
 MCP_PORT="${MCP_PORT:-8765}"
-SETTLE="${SETTLE:-0}"
+SETTLE="${SETTLE:-5}"
 PIXEL="${PIXEL:-188,215}"
 ARM="${ARM:-left}"
 STAMP="$(date +%Y%m%d_%H%M%S)"
@@ -113,5 +113,5 @@ else
 fi
 grep -ho "\[RobotMCP\][^\r]*" "${OUT}/client.log" | sed 's/env0 step.*//' | cut -c1-300
 for f in "${OUT}"/gateway/ep*/summary.json; do [[ -f "$f" ]] && echo "   summary: $(jq -c . "$f")"; done
-echo "   GPU tối đa: $(awk -F', ' 'NR>1{gsub(/ MiB/,"",$2); if($2>m)m=$2} END{print m" MiB"}' "${OUT}/gpu.csv")"
+echo "   GPU tối đa: $(awk -F', ' 'NR>1{v=$2; sub(/ MiB/,"",v); v+=0; if(v>m)m=v} END{print m" MiB"}' "${OUT}/gpu.csv")"
 echo "out: ${OUT}"

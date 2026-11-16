@@ -50,10 +50,10 @@ MOVE_DESC = (
     "Move one or both hands to a target pose, then return the execution result and a new observation "
     "(same JSON as observe). For each hand you give, any field you leave out keeps its current value; a "
     "hand you leave out stays where it is. The arm follows a path from the robot's motion planner, which "
-    "avoids the table and the robot itself but not other objects; after the arm arrives, the gripper "
-    "opens or closes. If the planner cannot reach a target, nothing moves and the result says so. Each "
-    "call uses simulation steps (the arm moves at a fixed maximum joint speed) and one unit of the move "
-    "budget. The episode can end at any time, for example when the step budget is used up; after that no "
+    "avoids the table and the robot itself but not other objects; the arm then holds still for a few "
+    "steps so it settles on the target, and only then does the gripper open or close. If the planner "
+    "cannot reach a target, nothing moves and the result says so. Each call uses simulation steps (the "
+    "arm moves at a fixed maximum joint speed) and one unit of the move budget. The episode can end at any time, for example when the step budget is used up; after that no "
     "action is possible. " + CONVENTIONS
 )
 

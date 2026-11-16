@@ -107,15 +107,32 @@ Xong khi: mỗi mục có câu trả lời có/không, kèm log. **Xong 2026-11-
 
 ## Bước 4. robot-mcp v0, chưa có LLM (`robot_mcp/`)
 
-- [ ] `robot_mcp/policy/RobotMCP/deploy.py` + `deploy.yml`: lấy observation, hỏi gateway lệnh, chạy bằng planner của sim. Mount vào container sim ở `XPolicyLab/policy/RobotMCP`. Theo kết quả bước 3:
+- [x] `robot_mcp/policy/RobotMCP/deploy.py` + `deploy.yml`: lấy observation, hỏi gateway lệnh, chạy bằng planner của sim. Mount vào container sim ở `XPolicyLab/policy/RobotMCP`. Theo kết quả bước 3:
   - lấy mẫu lại quỹ đạo theo 0.2 rad/khớp/step như Direct-EEF;
   - poll mỗi lần dưới 120 s;
   - mọi đường thoát đều ép episode thành thất bại nếu sim chưa tự kết thúc;
   - mount `arx_x5.yml` có bật ma trận camera.
-- [ ] `robot_mcp/gateway.py`: phía sim là policy server XPolicyLab, phía agent là MCP server 3 tool (`observe`, `move`, `give_up`). Giữ budget, ghi log mọi tool call.
-- [ ] `scripts/run_scripted.sh`: một script cố định (không LLM) gọi tool trên `stack_bowls`: đi tới trên một cái bát, hạ xuống, đóng gripper, nhấc lên.
+- [x] `robot_mcp/gateway.py`: phía sim là policy server XPolicyLab, phía agent là MCP server 3 tool (`observe`, `move`, `give_up`). Giữ budget, ghi log mọi tool call.
+- [x] `scripts/run_scripted.sh`: một script cố định (không LLM) gọi tool trên `stack_bowls`: đi tới trên một cái bát, hạ xuống, đóng gripper, nhấc lên.
 
-Xong khi: video thấy tay làm đúng script, log có từng `move` với kết quả và ảnh, episode kết thúc đúng lý do.
+Xong khi: video thấy tay làm đúng script, log có từng `move` với kết quả và ảnh, episode kết thúc đúng lý do. **Xong 2026-11-16.**
+
+Kết quả (máy eval, `results/scripted/20261116_100357`, `20261116_101157`, `20261116_123732`, `20261116_124120`; local có `test_local` với sim giả):
+- Image gateway phải cài gói bằng `/root/miniconda3/envs/RoboDojo/bin/python -m pip`: lúc build, `pip` là của conda base (Python 3.14).
+- Cả hai lần chạy: 3 tool hiện đúng; đích ngoài tầm với trả `planner_failed` và không có step nào chạy; `gripper=2` bị SDK chặn trước khi tới gateway; `give_up` kết thúc episode, `_result.json` điểm 0 (không phải 100), `forced_fail: true`. Sim chạy khoảng 220 s, phần lớn là khởi động Isaac Sim; 6 move mất 6–8 s.
+- Đứng yên sau khi di chuyển (`ROBOT_MCP_SETTLE_STEPS`):
+
+  | SETTLE | Sai số khi tới (vị trí / hướng) | Step dùng cho 6 move |
+  |---|---|---|
+  | 0 | 7–61 mm / tới 12° | 24 |
+  | 3 | ≤ 0.5 mm / ≤ 0.11° (chỉ move dài nhất, 12 step, còn lệch; còn lại 0.1 mm) | 39 |
+  | 5 | 0.1 mm / 0.02° | 47 |
+  | 10 | 0.1 mm / 0.02° | 67 |
+
+  Với 0, ảnh chụp lúc tay còn đang chạy, rồi tay tiếp tục trôi trong các move sau. Direct-EEF cũng không đứng yên (chạy `arm_steps + gripper_steps` rồi trả quan sát), nên nó cũng chịu độ trễ này. Đứng yên vẫn công bằng: chỉ là thêm action, vẫn tính vào `step_lim`. 0.1 mm / 0.02° là mức sàn (độ chính xác của planner), 5 step đã đạt, nên **mặc định là 5** (`deploy.py`, `run_scripted.sh`). Mỗi mức mới chạy 1 lần, tay không cầm gì, move dài nhất 12 step; cầm vật nặng hoặc move dài hơn có thể cần nhiều hơn.
+- Video chỉ có 1 khung mỗi lần `get_obs` (7 khung cho 6 move), không phải mỗi step.
+- Với SETTLE=10, tay trái làm đúng script: tới trên bát, hạ, khép kẹp, nhấc 10 cm. Bát không lên vì script nhắm tâm bát ở z 0.85, cao hơn miệng bát; kẹp khép giữa lòng bát (thấy rõ ở camera cổ tay). Đây là việc của agent, không phải lỗi điều khiển.
+- GPU tối đa 8.5 GB cho 1 episode.
 
 ## Bước 5. Agent thật, 1 episode mỗi loại
 
@@ -137,5 +154,5 @@ Xong khi: chạy được pilot 5 task × 5 episode (`align_blocks`, `deposit_co
 
 ## Câu hỏi mở
 
-- Chạy song song mấy episode trên 48 GB? Đo bằng `nvidia-smi` ở bước 4.
+- Chạy song song mấy episode trên 48 GB? Bước 4 đo được 8.5 GB mỗi episode, nên bộ nhớ đủ cho khoảng 5; chưa thử chạy song song thật.
 - Giới hạn tốc độ của subscription (Claude Code, Codex) khi chạy nhiều episode liền nhau.

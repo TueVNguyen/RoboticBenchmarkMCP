@@ -41,8 +41,9 @@ MAX_JOINT_STEP_RAD = 5.0 / 25.0
 GRIPPER_STEPS_FULL = 6
 # Một lệnh tối đa 10 s ở 25 Hz, như Direct-EEF; lệnh dài hơn bị từ chối, không bị nén.
 MAX_MOVE_STEPS = 250
-# Số step giữ yên sau khi tay chạy hết quỹ đạo (0 = như Direct-EEF).
-SETTLE_STEPS = int(os.environ.get("ROBOT_MCP_SETTLE_STEPS", "0"))
+# Số step giữ yên sau khi tay chạy hết quỹ đạo, trước khi chụp ảnh và trước gripper. 0 = như Direct-EEF,
+# nhưng khi đó tay lệch đích tới 61 mm / 12°; 5 đạt mức sàn 0.1 mm / 0.02° (PLAN bước 4). Tính vào step_lim.
+SETTLE_STEPS = int(os.environ.get("ROBOT_MCP_SETTLE_STEPS", "5"))
 
 
 def _np(x) -> np.ndarray:
